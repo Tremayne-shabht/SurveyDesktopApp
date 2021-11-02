@@ -1,0 +1,279 @@
+﻿<Window x:Class="SurveyDesktopApp.PL.SurveyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SurveyDesktopApp.PL"
+        mc:Ignorable="d"
+        Title="Survey Desktop App" Height="700" Width="1100" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+
+    <!--Background="#FF3C415E"-->
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Content="Take our Survey" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15, 15, 0, 10"/>
+
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <Label Content="Personal Details: " FontSize="16" Margin="15, 0" HorizontalAlignment="Left"/>
+
+                <Grid x:Name="Surname">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="Surname" Grid.Row="0" Grid.Column="0" Margin="80, 0, 0, 5" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="txtSurname" Grid.Row="0" Grid.Column="1" Margin="0, 2" Width="400" HorizontalAlignment="Left"/>
+
+                    <Label Content="First Names" Grid.Row="1" Grid.Column="0" Margin="80, 0, 0, 5" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="txtFirstNames" Grid.Row="1" Grid.Column="1" Margin="0, 2" Width="400" HorizontalAlignment="Left"/>
+
+                    <Label Content="Contact Numbers" Grid.Row="2" Grid.Column="0" Margin="80, 0, 0, 5" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="txtNumbers" Grid.Row="2" Grid.Column="1" Margin="0, 2" Width="400" HorizontalAlignment="Left"/>
+
+                    <Label Content="Date" Grid.Row="3" Grid.Column="0" Margin="80, 0, 0, 5" HorizontalAlignment="Left"/>
+                    <DatePicker x:Name="dPDate" Grid.Row="3" Grid.Column="1" Margin="0, 2" Width="400" HorizontalAlignment="Left" SelectedDateFormat="Long"/>
+
+                    <Label Content="Age" Grid.Row="4" Grid.Column="0" Margin="80, 0, 0, 5" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="txtAge" Grid.Row="4" Grid.Column="1" Margin="0, 2" Width="200" HorizontalAlignment="Left"/>
+                </Grid>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Row="2" Margin="15, 20, 0, 0">
+                <Label Content="What is your favourite food? (You can choose more than 1 answer)" Margin="0, 0, 0, 10"/>
+
+                <CheckBox x:Name="ckBPizza" Content="Pizza" HorizontalAlignment="Left" Margin="0, 0, 0, 5" Checked="ckBPizza_Checked"/>
+                <CheckBox x:Name="ckBPasta" Content="Pasta" HorizontalAlignment="Left" Margin="0, 5" Checked="ckBPasta_Checked"/>
+                <CheckBox x:Name="ckBPap" Content="Pap and Wors" HorizontalAlignment="Left" Margin="0, 5" Checked="ckBPap_Checked"/>
+                <CheckBox x:Name="ckBChicken" Content="Chicken stir fry" HorizontalAlignment="Left" Margin="0, 5" Checked="ckBChicken_Checked"/>
+                <CheckBox x:Name="ckBBeef" Content="Beef stir fry" HorizontalAlignment="Left" Margin="0, 5" Checked="ckBBeef_Checked"/>
+                <CheckBox x:Name="ckBOther" Content="Other" HorizontalAlignment="Left" Margin="0, 5" Checked="ckBOther_Checked"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Row="3" Margin="15, 30, 5, 0">
+                <Label Content="On a scale of 1 to 5 indicate whether you strongly agree to strongly disagree"/>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border BorderBrush="DimGray" BorderThickness="0.5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="55"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="155"/>
+                                    <ColumnDefinition Width="125"/>
+                                    <ColumnDefinition Width="125"/>
+                                    <ColumnDefinition Width="125"/>
+                                    <ColumnDefinition Width="170"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0">
+                                    <StackPanel Background="DimGray"/>
+                                </Border>
+
+                                <Border Grid.Column="1" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0">
+                                    <StackPanel Orientation="Vertical" Background="DimGray">
+                                        <Label Content="Strongly Agree" Margin="20, 2, 20, 1" HorizontalAlignment="Center" Foreground="White"/>
+                                        <Label Content="(1)" HorizontalAlignment="Center" Foreground="White"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Grid.Column="2" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0">
+                                    <StackPanel Orientation="Vertical" Background="DimGray">
+                                        <Label Content="Agree" Margin="20, 2, 20, 1" HorizontalAlignment="Center" Foreground="White"/>
+                                        <Label Content="(2)" HorizontalAlignment="Center" Foreground="White" Margin="0, 0, 0, 5"/>
+
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Grid.Column="3" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0">
+                                    <StackPanel Orientation="Vertical" Background="DimGray">
+                                        <Label Content="Neutral" Margin="20, 2, 20, 1" HorizontalAlignment="Center" Foreground="White"/>
+                                        <Label Content="(3)" HorizontalAlignment="Center" Foreground="White"/>
+
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Grid.Column="4" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0">
+                                    <StackPanel Orientation="Vertical" Background="DimGray">
+                                        <Label Content="Disagree" Margin="20, 2, 20, 1" HorizontalAlignment="Center" Foreground="White"/>
+                                        <Label Content="(4)" HorizontalAlignment="Center" Foreground="White"/>
+
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Grid.Column="5">
+                                    <StackPanel Orientation="Vertical" Background="DimGray">
+                                        <Label Content="Strongly Disagree" Margin="20, 2, 20, 1" HorizontalAlignment="Center" Foreground="White"/>
+                                        <Label Content="(5)" HorizontalAlignment="Center" Foreground="White"/>
+
+                                    </StackPanel>
+
+                                </Border>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid x:Name="myEatOut" Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="155"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="170"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Grid.Column="0" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0">
+                                        <Label Content="I like to eat out"/>
+                                    </Border>
+
+                                    <RadioButton x:Name="rBtnSAEat" Grid.Column="1" GroupName="EatOut" HorizontalAlignment="Center" Margin="0, 6.5"/>
+                                    <Border Grid.Column="1" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+
+                                    <RadioButton x:Name="rBtnAEat" Grid.Column="2" GroupName="EatOut" HorizontalAlignment="Center" Margin="0, 6.5"/>
+                                    <Border Grid.Column="2" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+
+                                    <Border Grid.Column="3" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnNEat" Grid.Column="3" GroupName="EatOut" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <Border Grid.Column="4" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnDEat" Grid.Column="4" GroupName="EatOut" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <RadioButton Grid.Column="5" x:Name="rBtnSDEat" GroupName="EatOut" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                </Grid>
+
+                                <Grid x:Name="myMovies" Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="155"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="170"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Grid.Column="0" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0">
+                                        <Label Content="I like to watch movies"/>
+                                    </Border>
+
+                                    <Border Grid.Column="1" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnSAMovies" GroupName="Movies" Grid.Column="1" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <Border Grid.Column="2" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnAMovies" GroupName="Movies" Grid.Column="2" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <Border Grid.Column="3" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnNMovies" GroupName="Movies" Grid.Column="3" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <Border Grid.Column="4" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnDMovies" GroupName="Movies" Grid.Column="4" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <RadioButton x:Name="rBtnSDMovies" GroupName="Movies" Grid.Column="5" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                </Grid>
+
+                                <Grid x:Name="myTV" Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="155"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="170"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Grid.Column="0" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0">
+                                        <Label Content="I like to watch TV"/>
+                                    </Border>
+
+                                    <Border Grid.Column="1" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnSATV" GroupName="TV" Grid.Column="1" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <Border Grid.Column="2" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnATV" GroupName="TV" Grid.Column="2" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <Border Grid.Column="3" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnNTV" GroupName="TV" Grid.Column="3" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <Border Grid.Column="4" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnDTV" GroupName="TV" Grid.Column="4" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <RadioButton x:Name="rBtnSDTV" GroupName="TV" Grid.Column="5" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                </Grid>
+
+                                <Grid x:Name="myRadio" Grid.Row="3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="155"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="170"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Grid.Column="0" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0">
+                                        <Label Content="I like to listen to the radio"/>
+                                    </Border>
+
+                                    <Border Grid.Column="1" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnSARadio" Grid.Column="1" GroupName="Radio" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <Border Grid.Column="2" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnARadio" GroupName="Radio" Grid.Column="2" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <Border Grid.Column="3" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnNRadio" GroupName="Radio" Grid.Column="3" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <Border Grid.Column="4" BorderBrush="DimGray" BorderThickness="0, 0, 1, 0"/>
+                                    <RadioButton x:Name="rBtnDRadio" GroupName="Radio" Grid.Column="4" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                    <RadioButton x:Name="rBtnSDRadio" GroupName="Radio" Grid.Column="5" HorizontalAlignment="Center" Margin="0, 6.5"/>
+
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+                
+            </StackPanel>
+
+            <Button x:Name="btnSubmit" Content="Submit" Width="200" Grid.Row="4" Margin="0, 30, 0, 20" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnSubmit_Click"/>
+        </Grid>
+    </ScrollViewer>
+    
+</Window>
